@@ -1,9 +1,11 @@
 {% assign posts = site.collections | where: 'label', include.l | first %}
 {% assign pages = posts.docs | sort: "title" %}
+<ul>
 {% for post in pages %}
   {% if post.semester == include.i or post.rank == include.i %}
     {% if post.type == include.my_ty %}
-      {% include archive-single.html %}
+      <li>{% include archive-single.html %}</li>
     {% endif %}
   {% endif %}
 {% endfor %}
+</ul>
