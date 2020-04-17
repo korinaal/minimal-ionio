@@ -1,4 +1,4 @@
-{% assign people = site.collections.people %}
+{% assign people = site.people %}
 people: {{people | size}}
 
 {% assign pages = people.docs | where: 'rank', include.r %}
