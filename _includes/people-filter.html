@@ -1,8 +1,6 @@
-{% assign people = site.collections.people | where: 'rank', include.r %}
-
-test
-
-{% for post in people %}
+{% assign people = site.collections.people %}
+{% assign pages = people.docs | where: 'rank', include.r | sort: "title" %}
+{% for post in pages %}
   <!-- {% if post.rank %} -->
     {% include archive-people.html %}
   <!-- {% endif %} -->
