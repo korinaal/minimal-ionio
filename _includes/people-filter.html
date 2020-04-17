@@ -1,8 +1,7 @@
 {% assign people = site.people %}
 people: {{people | size}}
-
-{% assign pages = people.docs | where: 'rank', include.r %}
-paged: {{pages | size}}
+{% assign pages = people | where: 'rank', include.r %}
+pages: {{pages | size}}
 {% for post in pages %}
   <!-- {% if post.rank %} -->
     {% include archive-people.html %}
