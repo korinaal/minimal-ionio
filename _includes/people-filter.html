@@ -1,4 +1,4 @@
-{% assign people = site.people | where: 'rank', include.r %}
+{% assign people = site.collections.people | where: 'rank', include.r %}
 {% for post in people %}
   {% if post.rank %}
     {% include archive-people.html %}
