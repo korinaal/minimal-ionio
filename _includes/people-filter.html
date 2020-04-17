@@ -1,5 +1,8 @@
 {% assign people = site.collections.people %}
-{% assign pages = people.docs | where: 'rank', include.r | sort: "title" %}
+people: {{people | size}}
+
+{% assign pages = people.docs | where: 'rank', include.r %}
+paged: {{pages | size}}
 {% for post in pages %}
   <!-- {% if post.rank %} -->
     {% include archive-people.html %}
