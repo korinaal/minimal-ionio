@@ -1,9 +1,6 @@
-{% assign people = site.people %}
-people: {{people | size}}
-{% assign pages = people | where: 'rank', include.r %}
-pages: {{pages | size}}
-{% for post in pages %}
-  <!-- {% if post.rank %} -->
-    {% include archive-people.html %}
-  <!-- {% endif %} -->
+{% assign people = site.people | sort: 'rank' %}
+{% for post in people %}
+    {% if post.rank == include.r %}
+        {% include archive-people.html %}
+    {% endif %}
 {% endfor %}  
