@@ -1,6 +1,9 @@
 {% assign people = site.collections.people | where: 'rank', include.r %}
+
+test
+
 {% for post in people %}
-  {% if post.rank %}
+  <!-- {% if post.rank %} -->
     {% include archive-people.html %}
-  {% endif %}
+  <!-- {% endif %} -->
 {% endfor %}  
